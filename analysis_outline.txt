@@ -1,0 +1,27 @@
+The goal of this assignment is to demonstrate to us your ability to manage a real-world data set, to communicate and contextualize summary statistics, and, most importantly, your creativity and analytical rigor in generating and testing hypotheses. The assignment is intentionally unspecific and exploratory in nature.
+
+- manage a real-world data set
+- communicate and contextualize summary statistics
+- your creativity and analytical rigor in generating and testing hypotheses
+
+Delays 
+
+## General Questions on Delay and Flight History
+
+1. How has air traffic volume changed over the years?
+2. How have delays changed over the years?
+3. Is there a relationship between the two?
+
+## Cutting delays and traffic by weekday
+
+4. What do air traffic and delays look like by TOD and weekday?
+
+## A qualitative rule exists for expecting delays during holiday travel, but can we quantify and contextualize it?
+
+5. Compare delays around holidays to non-holidays?
+6. Look at holidays fixed in the week vs. holidays on specific dates.
+7. Are some holidays worse than others in terms of delays and cancellations?
+
+## Detailed analysis of one specific holiday
+8. 
+
