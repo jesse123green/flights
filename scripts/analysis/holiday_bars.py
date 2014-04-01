@@ -4,7 +4,8 @@ import pylab as plt
 
 
 
-f = open('analysis_data/holiday_delays_thanks.csv','r')
+# f = open('analysis_data/holiday_delays_thanks.csv','r')
+f = open('analysis_data/flight_history.csv','r')
 csv_data = csv.reader(f)
 csv_data.next()
 
@@ -14,8 +15,8 @@ num_flights = []
 
 for row in csv_data:
 	num_flights.append(row[2])
-	delays.append(row[6])
-	delays_60.append(row[8])
+	delays.append(row[3])
+	delays_60.append(row[3])
 
 print delays
 delays = np.array(delays,dtype=float)
@@ -29,8 +30,9 @@ ax = fig.add_subplot(111)
 ax.plot(range(len(delays)),num_flights)
 
 ax2 = ax.twinx()
-ax2.bar(range(len(delays)), delays_60, 1, color='#b0c4de',alpha=.5)
-ax2.set_ylim((0,.12))
+# ax2.bar(range(len(delays)), delays_60, 1, color='#b0c4de',alpha=.5)
+ax2.plot(range(len(delays)),delays_60,color='green')
+# ax2.set_ylim((0,.12))
 
 ax.yaxis.set_ticks_position("right")
 ax2.yaxis.set_ticks_position("left")

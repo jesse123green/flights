@@ -30,17 +30,19 @@ c = mydb.cursor()
 
 holidays = []
 
-outfile = open('analysis_data/holiday_delays_thanks.csv','w')
+outfile = open('analysis_data/holiday_delays_mon_10.csv','w')
 
 outfile.write('day_shift,time_bin,total_flights,avg_arr_delay,med_arr_delay,perc_above_0,perc_above_15,perc_above_30,perc_above_60\n')
 f = open('analysis_data/holidays.csv','rU')
 csv_data = csv.reader(f)
 csv_data.next()
 for row in csv_data:
-	if int(row[2]) > 2003 and row[3] == 'Thanksgiving Day':
+	# if int(row[2]) > 2003 and row[3] == 'Thanksgiving Day':
+	if int(row[2]) > 2003 and row[0] == 'Mon':
 		holidays.append(row[5])
 
-
+print holidays
+print len(holidays)
 start_time = time2.time()
 
 # time_bin = time.strptime('00:00:00','%H:%M:%S')

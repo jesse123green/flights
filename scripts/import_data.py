@@ -2,6 +2,7 @@ import csv
 import MySQLdb
 import glob, sys, time
 from datetime import datetime
+
 mydb = MySQLdb.connect(host='localhost',
     user='root',
     passwd='purplepants123',

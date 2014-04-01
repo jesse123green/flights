@@ -1,5 +1,9 @@
 The goal of this assignment is to demonstrate to us your ability to manage a real-world data set, to communicate and contextualize summary statistics, and, most importantly, your creativity and analytical rigor in generating and testing hypotheses. The assignment is intentionally unspecific and exploratory in nature.
 
+The data set at hand covers passenger airline travel within the United States from 1987 to the present and can be accessed here: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time . We've also attached additional data on carriers and airport locations. We encourage you to merge the air traffic data with other data sets to contextualize your investigation. Mindful of the time we are giving you to complete this assignment, we recommend somewhat narrowly focusing your investigation.
+
+We're looking for a few page document that summarizes your investigation and your findings.
+
 - manage a real-world data set
 - communicate and contextualize summary statistics
 - your creativity and analytical rigor in generating and testing hypotheses
@@ -8,20 +12,31 @@ Delays
 
 ## General Questions on Delay and Flight History
 
-1. How has air traffic volume changed over the years?
+1. How has air traffic volume changed over the years? 
+	- flights
 2. How have delays changed over the years?
-3. Is there a relationship between the two?
+	- delayed flights on traffic
+4. Have route flight times changed over the years?
+	 - top 5 routes increased CRS flight times
+3. What data is relevant to me as a passenger?
+	- delay_15, delay_30, delay_60
 
-## Cutting delays and traffic by weekday
+## Planning a trip
 
-4. What do air traffic and delays look like by TOD and weekday?
+1. What do air traffic and delays look like by TOD and weekday?
+	- tod/weekday heatmap
+	- a typical week with delays above 60 (stem of delays with number of flights)
+2. Air traffic and delays by month in 2013? Overall?
+	- plot against historical averages
+	- histograms?
+
 
 ## A qualitative rule exists for expecting delays during holiday travel, but can we quantify and contextualize it?
 
-5. Compare delays around holidays to non-holidays?
-6. Look at holidays fixed in the week vs. holidays on specific dates.
-7. Are some holidays worse than others in terms of delays and cancellations?
+1. Compare delays around holidays to non-holidays?
+	- holiday week stem plots
+2. Are some holidays worse than others in terms of delays and cancellations?
 
 ## Detailed analysis of one specific holiday
-8. 
+1. 
 
