@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Thanks for Flying</title>
+    <script src="../static/js/d3.v2.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style type="text/css">
+
+#states path {
+  fill: #ccc;
+  stroke: #fff;
+}
+
+path.arc {
+  pointer-events: none;
+  fill: none;
+  stroke: #000;
+  display: none;
+}
+
+path.cell {
+  fill: none;
+  pointer-events: all;
+}
+
+#daypicker {
+	position:absolute;
+  	margin: 600px 0 0 50px;
+}
+
+#cells g:hover path.arc {
+  display: inherit;
+}
+    </style>
+  </head>
+  <body>
+
+<div id="daypicker">
+<form>
+	<input type="radio"  name="day" onclick="selectDay('0')"/> Tuesday
+		&nbsp;&nbsp;<input type="radio" name="day" onclick="selectDay('1')" /> Wednesday
+		&nbsp;&nbsp;<input type="radio" name="day" onclick="selectDay('2')" checked/> Thanksgiving
+	</form>
+</div>
+
+<script src='../static/js/flights.js'></script>
+
+
+  </body>
+  </html>
+  

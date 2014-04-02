@@ -2,6 +2,8 @@ import csv, sys
 import numpy as np
 import pylab as plt
 from scipy.stats import pearsonr
+
+
 def moving_average(interval, window_size):
     window = np.ones(int(window_size))/float(window_size)
     return np.convolve(interval, window, 'same')

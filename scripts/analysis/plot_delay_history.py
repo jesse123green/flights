@@ -1,6 +1,7 @@
 import csv
 import numpy as np
 import pylab as plt
+from scipy.stats import linregress
 
 def moving_average(interval, window_size):
     window = np.ones(int(window_size))/float(window_size)
@@ -23,7 +24,7 @@ for row in csv_data:
 	delays.append(float(row[5]))
 	delays_15.append(float(row[6]))
 	delays_30.append(float(row[7]))
-	delays_60.append(row[8])
+	delays_60.append(float(row[8]))
 
 num_flights = np.array(num_flights,dtype=int)
 delays = np.array(delays,dtype=float)
@@ -34,33 +35,43 @@ delays_60 = np.array(delays_60,dtype=float)
 
 fig = plt.figure(1)
 ax = fig.add_subplot(111)
-# ax.bar(range(len(delays)), delays, 1, color='#deb0b0',alpha=.5)
+
+x = np.array(range(len(delays)),dtype=int)
+
+slope, intercept, r_value, p_value, std_err = linregress(x,delays)
+print slope*12
+
 ma = moving_average(delays,12)
-ax.plot(range(len(ma)),ma,color='blue',linewidth=8)
-ax.plot(range(len(delays)),delays,color='blue',alpha=.5)
+ax.plot(x,ma,color='blue',linewidth=8)
+ax.plot(x,delays,color='blue',alpha=.5)
+ax.plot(x,slope*x + intercept)
+
+slope, intercept, r_value, p_value, std_err = linregress(x,delays_15)
+print slope * 12
 
 ma = moving_average(delays_15,12)
-ax.plot(range(len(ma)),ma,color='green',linewidth=8)
-ax.plot(range(len(delays)),delays_15,color='green',alpha=.5)
+ax.plot(x,ma,color='green',linewidth=8)
+ax.plot(x,delays_15,color='green',alpha=.5)
+ax.plot(x,x*slope + intercept,color='green',alpha=.5)
+
+slope, intercept, r_value, p_value, std_err = linregress(x,delays_30)
+print slope * 12
 
 ma = moving_average(delays_30,12)
-ax.plot(range(len(ma)),ma,color='cyan',linewidth=8)
-ax.plot(range(len(delays)),delays_30,color='cyan',alpha=.5)
+ax.plot(x,ma,color='cyan',linewidth=8)
+ax.plot(x,delays_30,color='cyan',alpha=.5)
+ax.plot(x,x*slope + intercept,color='green',alpha=.5)
+
+slope, intercept, r_value, p_value, std_err = linregress(x,delays_60)
+print slope * 12
 
 ma = moving_average(delays_60,12)
-ax.plot(range(len(ma)),ma,color='magenta',linewidth=8)
-ax.plot(range(len(delays)),delays_60,color='magenta',alpha=.5)
-
-
-# print len(delays),len(ma)
-# ax2 = ax.twinx()
-# # ax2.bar(range(len(delays)), delays_60, 1, color='#b0c4de',alpha=.5)
-# ma2 = moving_average(num_flights,12)
-# ax2.plot(range(len(ma2)),ma2,color='blue',linewidth=8)
-# ax2.plot(range(len(num_flights)),num_flights,color='blue',alpha=.5)
-# ax2.set_ylim((0,.12))
-
-# ax.yaxis.set_ticks_position("right")
-# ax2.yaxis.set_ticks_position("left")
+ax.plot(x,ma,color='magenta',linewidth=8)
+ax.plot(x,delays_60,color='magenta',alpha=.5)
+ax.plot(x,x*slope + intercept,color='green',alpha=.5)
 
 plt.show()
+
+
+
+
