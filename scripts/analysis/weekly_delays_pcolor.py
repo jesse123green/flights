@@ -9,7 +9,7 @@ def moving_average(interval, window_size):
 
 all_delays = []
 
-d = 7
+d = 8
 
 for thisday in range(7):
 	f = open('analysis_data/tod/timeofday_all.csv','r')
@@ -42,14 +42,14 @@ fig, ax = plt.subplots(figsize=(24,5.5))
 # plt.xticks(range(24))
 # plt.yticks(np.array(range(7)) + .5)
 # plt.grid()
-cax = ax.pcolor(all_delays,cmap='Blues',vmin=0,vmax=.22)
+cax = ax.pcolor(all_delays,cmap='Blues',vmin=0,vmax=.12)
 plt.xlim((0,24))
 plt.xlabel('Departure Time')
 ax.set_xticks([0,5,10,15,20])
 ax.set_xticklabels(['00:00','05:00','10:00','15:00','20:00'])
 ax.set_yticks(np.arange(.5,7.5,1))
 ax.set_yticklabels(['Sun','Sat','Fri','Thu','Wed','Tue','Mon'])
-cbar = fig.colorbar(cax, ticks=[0, .11, .22])
+cbar = fig.colorbar(cax, ticks=[0, .06, .12])
 # cbar.ax.set_yticklabels(['< -1', '0', '> 1'])# vertically oriented colorbar
 plt.savefig('plots/heatmap_all.png')
 # plt.colorbar()
