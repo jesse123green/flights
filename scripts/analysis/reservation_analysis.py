@@ -53,8 +53,8 @@ start_time = time2.time()
 # json.dump(reservations_new,open('analysis_data/reservations_new.json','w'))
 
 
-reservations_old = json.load(open('analysis_data/reservations_old.json','r'))
-reservations_new = json.load(open('analysis_data/reservations_new.json','r'))
+reservations_old = json.load(open('analysis_data/reservations/reservations_old.json','r'))
+reservations_new = json.load(open('analysis_data/reservations/reservations_new.json','r'))
 
 differences = []
 
@@ -67,6 +67,8 @@ for key in reservations_new:
 print np.mean(differences)
 plt.hist(differences,bins=50)
 plt.grid()
+plt.ylabel('Number of Occurences')
+plt.xlabel('Change in CRS Elapsed Time of Flight')
 plt.xlim((-40,40))
 plt.show()
 

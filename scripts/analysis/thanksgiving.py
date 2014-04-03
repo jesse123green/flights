@@ -59,8 +59,8 @@ for day_shift in range(-2,1):
 	current_day = row_datetime.weekday()
 
 	for d in c.fetchall():
-		print current_day,d[0],d[1],d[2]
 		if int(d[2]) == 0:
+			print current_day,d[0],d[1],d[2]
 			continue
 		if not(outfile.has_key(d[0])):
 			outfile[d[0]] = {}
@@ -70,7 +70,7 @@ for day_shift in range(-2,1):
 		outfile[d[0]][d[1]][weekdaynames[current_day]]['ratio'] = (float(d[3]) + float(d[4]))/float(d[4])
 		outfile[d[0]][d[1]][weekdaynames[current_day]]['numFlights'] = int(d[2])
 	# print outfile
-print outfile['DEN']['LAX']
+# print outfile['DEN']['LAX']
 counts = []
 
 for key in outfile:
